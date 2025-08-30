@@ -11,14 +11,14 @@
 - **GCC**: Used to compile the C file (`.c`) and link object files into an executable (`.out`).
   - Install on Linux: `sudo apt-get install gcc` (Ubuntu/Debian) or `sudo dnf install gcc` (Fedora).
 - **Operating System**: A Unix-like system (e.g., Linux, macOS) with support for the above tools.
-  - The script uses `subprocess.run` to execute `as` and `gcc`, which are typically available on Unix-like systems.
+  - ```run_integration_tests.py``` uses `subprocess.run` to execute `as` and `gcc`, which are typically available on Unix-like systems.
 
 ## Command-Line Interface
-The script uses `argparse` to handle command-line arguments for configuring the compilation process.
+```compiler.py``` uses `argparse` to handle command-line arguments for configuring the compilation process.
 
 ### Basic Command
 ```bash
-python script.py -t <target> -s <source> -d <destination>
+python compiler.py -t <target> -s <source> -d <destination>
 ```
 
 ### Arguments
@@ -47,17 +47,17 @@ python script.py -t <target> -s <source> -d <destination>
 ### Example Commands
 - Compile a source file to assembly for x86-64 (Intel syntax):  
   ```bash
-  python script.py -t x86-64-gas-Intel -s source.src -d output.asm
+  python compiler.py -t x86-64-gas-Intel -s source.src -d output.asm
   ```
 
 - View syntax description:  
   ```bash
-  python script.py -de syntax
+  python compiler.py -de syntax
   ```
 
 - View both syntax and examples:  
   ```bash
-  python script.py -de all
+  python compiler.py -de all
   ```
 
 ## Behavior
